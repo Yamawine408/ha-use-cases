@@ -20,7 +20,7 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     <div class="cards" id="cards">
       {cases.map((entry) => (
         <article class="case-card" data-category={entry.data.category} data-search={[entry.data.title, entry.data.summary, entry.data.category, ...entry.data.tags].join(' ').toLowerCase()}>
-          <a href={Astro.base + 'use-cases/' + entry.slug + '/'} class="card-link">
+          <a href={Astro.base + '/use-cases/' + entry.id + '/'} class="card-link">
             <span class="category">{entry.data.category}</span>
             <h3>{entry.data.title}</h3>
             <p>{entry.data.summary}</p>
