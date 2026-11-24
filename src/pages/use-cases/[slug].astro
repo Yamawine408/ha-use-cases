@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 ---
 <BaseLayout title={entry.data.title} description={entry.data.summary}>
   <article class="detail">
-    <a class="back" href={Astro.base}>← 事例一覧に戻る</a>
+    <a class="back" href={import.meta.env.BASE_URL}>← 事例一覧に戻る</a>
     <span class="category">{entry.data.category}</span>
     <h1>{entry.data.title}</h1>
     <p class="detail-summary">{entry.data.summary}</p>
