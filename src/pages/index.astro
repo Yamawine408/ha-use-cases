@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const cases = await getCollection('useCases');
 const categories = [...new Set(cases.map((c) => c.data.category))].sort();
 ---
@@ -20,7 +21,7 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     <div class="cards" id="cards">
       {cases.map((entry) => (
         <article class="case-card" data-category={entry.data.category} data-search={[entry.data.title, entry.data.summary, entry.data.category, ...entry.data.tags].join(' ').toLowerCase()}>
-          <a href={import.meta.env.BASE_URL + 'use-cases/' + entry.id + '/'} class="card-link">
+          <a href={baseUrl + 'use-cases/' + entry.id + '/'} class="card-link">
             <span class="category">{entry.data.category}</span>
             <h3>{entry.data.title}</h3>
             <p>{entry.data.summary}</p>
