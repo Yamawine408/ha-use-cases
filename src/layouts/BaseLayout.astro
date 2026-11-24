@@ -1,0 +1,21 @@
+---
+const { title = 'Home Assistantで、やりたいことを探す。', description = 'Home Assistantで実現できる暮らしのアイデア集。' } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | HAでできること</title>
+    <link rel="stylesheet" href={Astro.base + 'styles/global.css'} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={Astro.base}>HAでできること<span>Home Assistant Use Cases</span></a>
+      <nav><a href={Astro.base}>事例を探す</a><a href="https://www.home-assistant.io/" target="_blank" rel="noreferrer">Home Assistant公式</a></nav>
+    </header>
+    <main><slot /></main>
+    <footer>Home Assistantで、こんなことができる。 <span>アイデア共有カタログ</span></footer>
+  </body>
+</html>
