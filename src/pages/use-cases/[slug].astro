@@ -19,29 +19,19 @@ const { entry } = Astro.props;
     <span class="category">{entry.data.category}</span>
     <h1>{entry.data.title}</h1>
     <p class="detail-summary">{entry.data.summary}</p>
-    {entry.data.difficulty && <p class="difficulty">目安：{entry.data.difficulty}</p>}
-    {entry.data.tags.length > 0 && (
-      <div class="tags">{entry.data.tags.map((tag) => <span>#{tag}</span>)</div>
-    )}
-    {entry.data.requirements.length > 0 && (
-      <section>
-        <h2>必要なもの・関連するもの</h2>
-        <ul>{entry.data.requirements.map((requirement) => <li>{requirement}</li>)}</ul>
-      </section>
-    )}
+    {entry.data.difficulty ? <p class="difficulty">目安：{entry.data.difficulty}</p> : null}
+    {entry.data.tags.length ? <div class="tags">{entry.data.tags.map((tag) => <span>#{tag}</span>)}</div> : null}
+    {entry.data.requirements.length ? <section>
+      <h2>必要なもの・関連するもの</h2>
+      <ul>{entry.data.requirements.map((requirement) => <li>{requirement}</li>)}</ul>
+    </section> : null}
     <section class="idea-note">
       <h2>実現のヒント</h2>
       <p>センサーやデバイスの状態をHome Assistantで組み合わせることで実現できます。具体的な構成は環境によって異なります。下の参考リンクもご覧ください。</p>
     </section>
-    {entry.data.references.length > 0 && (
-      <section>
-        <h2>参考リンク</h2>
-        <ul>
-          {entry.data.references.map((reference) => (
-            <li><a href={reference.url} target="_blank" rel="noreferrer">{reference.label} ↗</a></li>
-          ))}
-        </ul>
-      </section>
-    )}
+    {entry.data.references.length ? <section>
+      <h2>参考リンク</h2>
+      <ul>{entry.data.references.map((reference) => <li><a href={reference.url} target="_blank" rel="noreferrer">{reference.label} ↗</a></li>)}</ul>
+    </section> : null}
   </article>
 </BaseLayout>
