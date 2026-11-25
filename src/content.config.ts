@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const useCases = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/use-cases' }),
+  loader: glob({ pattern: '**/*.md', base: './content/use-cases' }),
   schema: z.object({
     title: z.string(),
     category: z.string(),
