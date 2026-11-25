@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+---
+<BaseLayout title="ネットワーク・通信・連携技術 | Home Assistantでできること" description="Home Assistantを支えるネットワーク、無線通信、プロトコル、連携技術を整理する。">
+  <section class="tech-page">
+    <p class="eyebrow">TECHNOLOGY GUIDE</p>
+    <h1>ネットワーク・通信・連携技術</h1>
+    <p class="tech-lead">Home Assistantやスマートホームの機器は、さまざまなネットワークや通信方式を使ってつながっています。ここでは、よく登場する技術を役割ごとに整理し、何が違うのか、どのようにつながるのかを紹介します。</p>
+
+    <nav class="tech-nav" aria-label="ページ内ナビゲーション">
+      <a href="#network">ネットワーク基盤</a>
+      <a href="#wireless">無線通信</a>
+      <a href="#protocols">通信プロトコル</a>
+      <a href="#ha-connect">HAでの連携</a>
+    </nav>
+
+    <section id="network" class="tech-section">
+      <h2>ネットワーク基盤</h2>
+      <p>機器同士が通信するための、家のネットワークを支える技術。</p>
+      <div class="tech-grid">
+        <article class="tech-card"><h3>Wi-Fi</h3><p>無線LAN。スマートフォンや家電、ESPHome機器などを家庭内ネットワークにつなぐ。</p></article>
+        <article class="tech-card"><h3>Ethernet</h3><p>LANケーブルによる有線ネットワーク。安定した接続が必要な機器やサーバーで使われる。</p></article>
+        <article class="tech-card"><h3>IPアドレス</h3><p>ネットワーク上の機器を識別するための住所。固定IPやDHCPによる割り当てがある。</p></article>
+        <article class="tech-card"><h3>DHCP / DNS</h3><p>DHCPはIPアドレスなどを自動配布し、DNSはホスト名とIPアドレスの対応を調べる仕組み。</p></article>
+        <article class="tech-card"><h3>VLAN</h3><p>物理的なネットワークを論理的に分ける技術。IoT機器を別のネットワークに分離する用途などに使える。</p></article>
+        <article class="tech-card"><h3>PoE</h3><p>Ethernetケーブルを通してデータと電力を同時に供給する仕組み。対応カメラやアクセスポイントなどで利用される。</p></article>
+      </div>
+    </section>
+
+    <section id="wireless" class="tech-section">
+      <h2>無線通信</h2>
+      <p>Wi-Fi以外にも、用途や消費電力に合わせた無線方式が使われている。</p>
+      <div class="tech-grid">
+        <article class="tech-card"><h3>Zigbee</h3><p>低消費電力の無線通信規格。センサーや照明などのスマートホーム機器で広く使われ、メッシュネットワークを構成できる。</p></article>
+        <article class="tech-card"><h3>Bluetooth LE</h3><p>低消費電力のBluetooth。近距離のセンサーやビーコン、機器設定・接続などに利用される。</p></article>
+        <article class="tech-card"><h3>Thread</h3><p>IPベースの低消費電力メッシュネットワーク。Matter対応機器などの通信基盤として使われる。</p></article>
+        <article class="tech-card"><h3>Matter</h3><p>異なるスマートホーム製品やプラットフォーム間の相互接続を目指す標準規格。Wi-FiやThreadなどを通信基盤として利用する。</p></article>
+      </div>
+    </section>
+
+    <section id="protocols" class="tech-section">
+      <h2>通信プロトコル</h2>
+      <p>機器やサービス間で、どのようにデータを送受信するかを定める仕組み。</p>
+      <div class="tech-grid">
+        <article class="tech-card"><h3>MQTT</h3><p>軽量なメッセージ通信プロトコル。MQTTブローカーを介してセンサーやサービスがデータを送受信する。</p></article>
+        <article class="tech-card"><h3>HTTP / REST API</h3><p>Webで広く使われる通信方式やAPIの設計スタイル。外部サービスや機器の情報取得・操作に利用される。</p></article>
+        <article class="tech-card"><h3>WebSocket</h3><p>接続を維持しながら双方向にデータをやり取りする通信方式。リアルタイム更新などに使われる。</p></article>
+      </div>
+    </section>
+
+    <section id="ha-connect" class="tech-section">
+      <h2>Home Assistantでの連携・管理</h2>
+      <p>通信規格やプロトコルそのものではなく、Home Assistantが機器を扱ったり、異なる仕組みをつないだりするためのソフトウェア・統合機能。</p>
+      <div class="tech-grid">
+        <article class="tech-card"><h3>ZHA</h3><p>Home Assistant標準のZigbee管理統合。対応コーディネーターを使ってZigbee機器を接続・管理する。</p></article>
+        <article class="tech-card"><h3>Zigbee2MQTT</h3><p>Zigbee機器をMQTT経由で扱うためのソフトウェア。ZigbeeネットワークとMQTT環境をつなぐ。</p></article>
+        <article class="tech-card"><h3>ESPHome</h3><p>ESP32やESP8266などのデバイスを設定・ファームウェア化し、Home Assistantと連携するための仕組み。</p></article>
+        <article class="tech-card"><h3>MQTT Integration</h3><p>Home AssistantがMQTTブローカーと接続し、MQTTメッセージをセンサーや状態、操作などに利用する統合機能。</p></article>
+      </div>
+    </section>
+
+    <aside class="tech-note">
+      <h2>それぞれの役割は違う</h2>
+      <p>例えば、Zigbeeは無線通信規格、MQTTはメッセージ通信プロトコル、ZHAはHome Assistantの統合機能です。Zigbee2MQTTはZigbee機器とMQTTをつなぐソフトウェア。このように「通信方式」「プロトコル」「管理ソフトウェア・統合機能」を分けて理解すると、構成が把握しやすくなります。</p>
+    </aside>
+
+    <a class="tech-back" href={baseUrl}>← トップページへ戻る</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .tech-page{max-width:1000px;margin:2rem auto 4rem;padding:0 1rem}
+  .tech-page h1{margin:.25rem 0 1rem}
+  .tech-lead{color:var(--muted);line-height:1.8;margin:0 0 1.5rem}
+  .tech-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0 2.5rem}
+  .tech-nav a{padding:.55rem .85rem;border:1px solid var(--border,rgba(128,128,128,.25));border-radius:999px;color:inherit;text-decoration:none;font-size:.9rem}
+  .tech-section{margin:2.5rem 0}
+  .tech-section h2{margin:0 0 .5rem}
+  .tech-section>p{color:var(--muted);margin:0 0 1.1rem;line-height:1.7}
+  .tech-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+  .tech-card{padding:1.15rem 1.25rem;border:1px solid var(--border,rgba(128,128,128,.22));border-radius:16px;background:var(--card,transparent)}
+  .tech-card h3{margin:0 0 .5rem;font-size:1.05rem}
+  .tech-card p{margin:0;color:var(--muted);line-height:1.65;font-size:.92rem}
+  .tech-note{margin:2.5rem 0;padding:1.25rem 1.5rem;border-left:3px solid var(--accent,#6aa4d8);background:var(--card,rgba(128,128,128,.04));border-radius:0 14px 14px 0}
+  .tech-note h2{margin:0 0 .6rem;font-size:1.15rem}
+  .tech-note p{margin:0;line-height:1.75}
+  .tech-back{display:inline-block;margin-top:1.5rem;color:inherit;text-decoration:none;opacity:.8}
+  .tech-back:hover{opacity:1;text-decoration:underline}
+  @media(max-width:640px){.tech-grid{grid-template-columns:1fr}.tech-page{padding:0 .5rem}}
+</style>
