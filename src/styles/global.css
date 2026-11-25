@@ -1,2 +1,19 @@
 /* Add AI credit below the shared site footer text */
 .ai-credit{font-size:.72rem;color:var(--muted);opacity:.65;margin-top:12px;letter-spacing:.02em}
+
+/* Homepage idea navigation cards */
+.idea-hub{margin:3.5rem 0 2rem}
+.idea-hub-head{margin-bottom:1.25rem}
+.idea-hub-head .eyebrow{margin:0 0 .5rem;letter-spacing:.14em;font-size:.72rem;opacity:.65}
+.idea-hub-head h2{margin:.2rem 0 .5rem}
+.idea-hub-head p:last-child{color:var(--muted);margin:0}
+.idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.idea-card{display:flex;flex-direction:column;min-height:190px;padding:1.35rem;border:1px solid var(--border,rgba(128,128,128,.22));border-radius:18px;text-decoration:none;color:inherit;background:var(--card,transparent);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.idea-card:hover{transform:translateY(-3px);border-color:var(--accent,rgba(100,160,220,.6));background:var(--card-hover,rgba(128,128,128,.04))}
+.idea-number{font-size:.72rem;letter-spacing:.12em;opacity:.55;margin-bottom:.75rem}
+.idea-card h3{margin:0 0 .5rem;font-size:1.15rem}
+.idea-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.65}
+.idea-arrow{margin-top:auto;padding-top:1rem;font-size:.85rem;font-weight:600;opacity:.75}
+.idea-card-featured{background:var(--card-featured,rgba(128,128,128,.06))}
+.catalog#cases{scroll-margin-top:2rem}
+@media(max-width:640px){.idea-grid{grid-template-columns:1fr}.idea-card{min-height:150px}}
