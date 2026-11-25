@@ -12,6 +12,22 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     <p class="hero-copy">「こんなことできる？」から始めよう。暮らしの中のアイデアを見つける事例集です。</p>
     <div class="search-wrap"><input id="search" type="search" placeholder="やりたいこと、キーワードで検索…" aria-label="事例を検索" /></div>
   </section>
+  <section class="intro-links" aria-label="初めての方へ">
+    <a class="intro-card" href={baseUrl + 'about/'}>
+      <span class="intro-icon">⌂</span>
+      <span class="intro-label">はじめての方へ</span>
+      <h2>HAってなに？</h2>
+      <p>Home Assistantでできること、スマートホームの楽しさを知る。</p>
+      <span class="intro-more">読む →</span>
+    </a>
+    <a class="intro-card" href={baseUrl + 'getting-started/'}>
+      <span class="intro-icon">⚙</span>
+      <span class="intro-label">START GUIDE</span>
+      <h2>HAを始めるために必要なこと</h2>
+      <p>導入に必要な機器や環境、最初の一歩を知る。</p>
+      <span class="intro-more">読む →</span>
+    </a>
+  </section>
   <section class="catalog">
     <div class="catalog-head"><h2>アイデアを探す</h2><span id="count">{cases.length}件</span></div>
     <div class="filters" id="filters">
