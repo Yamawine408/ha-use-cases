@@ -47,7 +47,7 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
         <p>照明を点ける、家電を動かす、通知する。目的から探す。</p>
         <span class="idea-arrow">探す →</span>
       </a>
-      <a class="idea-card idea-card-featured" href="#cases">
+      <a class="idea-card idea-card-featured" href={baseUrl + 'cases/'}>
         <span class="idea-number">03</span>
         <h3>事例集</h3>
         <p>具体的な活用例を眺めながら、新しいアイデアを見つける。</p>
@@ -62,7 +62,8 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     </div>
   </section>
   <section class="catalog" id="cases">
-    <div class="catalog-head"><h2>事例集</h2><span id="count">{cases.length}件</span></div>
+    <div class="catalog-head"><h2>事例集・プレビュー</h2><span id="count">{cases.length}件</span></div>
+    <p class="catalog-preview-note">トップページでは検索用のプレビューを残しています。事例を一覧で見るには、<a href={baseUrl + 'cases/'}>事例集ページ</a>へ。</p>
     <div class="filters" id="filters">
       <button class="filter active" data-category="all">すべて</button>
       {categories.map((category) => <button class="filter" data-category={category}>{category}</button>)}
