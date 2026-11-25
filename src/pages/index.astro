@@ -10,7 +10,6 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     <p class="eyebrow">HOME ASSISTANT USE CASES</p>
     <h1>Home Assistantで、<br /><em>やりたいこと</em>を探す。</h1>
     <p class="hero-copy">「こんなことできる？」から始めよう。暮らしの中のアイデアを見つける事例集です。</p>
-    <div class="search-wrap"><input id="search" type="search" placeholder="やりたいこと、キーワードで検索…" aria-label="事例を検索" /></div>
   </section>
   <section class="intro-links" aria-label="初めての方へ">
     <a class="intro-card" href={baseUrl + 'about/'}>
@@ -61,55 +60,11 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
       </a>
     </div>
   </section>
-  <section class="catalog" id="cases">
-    <div class="catalog-head"><h2>事例集・プレビュー</h2><span id="count">{cases.length}件</span></div>
-    <p class="catalog-preview-note">トップページでは検索用のプレビューを残しています。事例を一覧で見るには、<a href={baseUrl + 'cases/'}>事例集ページ</a>へ。</p>
-    <div class="filters" id="filters">
-      <button class="filter active" data-category="all">すべて</button>
-      {categories.map((category) => <button class="filter" data-category={category}>{category}</button>)}
-    </div>
-    <div class="cards" id="cards">
-      {cases.map((entry) => (
-        <article class="case-card" data-category={entry.data.category} data-search={[entry.data.title, entry.data.summary, entry.data.category, ...entry.data.tags].join(' ').toLowerCase()}>
-          <a href={baseUrl + 'use-cases/' + entry.id + '/'} class="card-link">
-            <span class="category">{entry.data.category}</span>
-            <h3>{entry.data.title}</h3>
-            <p>{entry.data.summary}</p>
-            <div class="tags">{entry.data.tags.map((tag) => <span>#{tag}</span>)}</div>
-            <span class="read-more">詳しく見る →</span>
-          </a>
-        </article>
-      ))}
-    </div>
-    <p id="empty" class="empty" hidden>該当する事例はまだありません。検索語を変えてみてください。</p>
+  <section class="catalog catalog-link" id="cases">
+    <a class="catalog-link-card" href={baseUrl + 'cases/'}>
+      <div class="catalog-head"><h2>事例集・プレビュー</h2><span>{cases.length}件 →</span></div>
+      <p>実際の活用事例を一覧で見て、Home Assistantでできることを探してみよう。</p>
+      <span class="read-more">事例一覧を見る →</span>
+    </a>
   </section>
-  <script>
-    const search = document.querySelector('#search');
-    const filters = document.querySelector('#filters');
-    const cards = [...document.querySelectorAll('.case-card')];
-    const count = document.querySelector('#count');
-    const empty = document.querySelector('#empty');
-    let active = 'all';
-    function update() {
-      const term = search.value.trim().toLowerCase();
-      let shown = 0;
-      cards.forEach((card) => {
-        const matchCategory = active === 'all' || card.dataset.category === active;
-        const matchSearch = !term || card.dataset.search.includes(term);
-        const visible = matchCategory && matchSearch;
-        card.hidden = !visible;
-        if (visible) shown++;
-      });
-      count.textContent = shown + '件';
-      empty.hidden = shown > 0;
-    }
-    search.addEventListener('input', update);
-    filters.addEventListener('click', (event) => {
-      const button = event.target.closest('button[data-category]');
-      if (!button) return;
-      active = button.dataset.category;
-      filters.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === button));
-      update();
-    });
-  </script>
 </BaseLayout>
