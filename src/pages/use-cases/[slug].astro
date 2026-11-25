@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 
 export async function getStaticPaths() {
@@ -12,10 +12,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const { Content } = await render(entry);
 ---
 <BaseLayout title={entry.data.title} description={entry.data.summary}>
   <article class="detail">
-    <a class="back" href={baseUrl}>← 事例一覧に戻る</a>
+    <a class="back" href={baseUrl + 'cases/'}>← 事例一覧に戻る</a>
     <span class="category">{entry.data.category}</span>
     <h1>{entry.data.title}</h1>
     <p class="detail-summary">{entry.data.summary}</p>
@@ -25,10 +26,9 @@ const { entry } = Astro.props;
       <h2>必要なもの・関連するもの</h2>
       <ul>{entry.data.requirements.map((requirement) => <li>{requirement}</li>)}</ul>
     </section> : null}
-    <section class="idea-note">
-      <h2>実現のヒント</h2>
-      <p>センサーやデバイスの状態をHome Assistantで組み合わせることで実現できます。具体的な構成は環境によって異なります。下の参考リンクもご覧ください。</p>
-    </section>
+    <div class="case-content">
+      <Content />
+    </div>
     {entry.data.references.length ? <section>
       <h2>参考リンク</h2>
       <ul>{entry.data.references.map((reference) => <li><a href={reference.url} target="_blank" rel="noreferrer">{reference.label} ↗</a></li>)}</ul>
