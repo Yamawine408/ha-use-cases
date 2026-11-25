@@ -17,6 +17,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <nav><a href={baseUrl}>事例を探す</a><a href="https://www.home-assistant.io/" target="_blank" rel="noreferrer">Home Assistant公式</a></nav>
     </header>
     <main><slot /></main>
-    <footer>Home Assistantで、こんなことができる。 <span>アイデア共有カタログ</span></footer>
+    <footer>
+      Home Assistantで、こんなことができる。 <span>アイデア共有カタログ</span>
+      <div class="ai-credit">Made with ChatGPT</div>
+    </footer>
   </body>
 </html>
