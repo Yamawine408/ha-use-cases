@@ -1,21 +1,16 @@
 ---
-layout: ../layouts/BaseLayout.astro
+layout: ../layouts/HomeAssistantLayout.astro
 title: Home Assistant
-description: Home Assistantについて
+description: Home Assistantについて。自由にデバイスをつなぎ、自分の暮らしに合わせたホームオートメーションを作る。
 ---
 
-# ホームアシスタント (HA)
+## Home Assistantでできること
 
-ホームアシスタント（Home Assistant、以下HA）は、ホームオートメーション
-を実現する無料で使えるソフトウェアです。
+照明、空調、センサー、家電など、さまざまな機器を連携させて、あなたの暮らしに合ったスマートホームを実現できます。
 
-現在、ホームオートメーションを実現するソフトウェアはベンダーが提供する
-ものがたくさんありますが、それらの多くはベンダーが提供する機器でしか使
-えなかったり、クラウドでしか使えなかったりします。
+- 照明や家電を自動でコントロール
+- 温度や湿度、電力などを見える化
+- 防犯や見守りを強化
+- 自分のアイデアで自由なオートメーションを作る
 
-HAは、いろんなベンダーの機器（デバイス）を統一して扱うことができ、基本
-的にクラウドに依存しないローカルな実行であることが、他のベンダー提供の
-ホームオートメーションとは大きく違います。
-
-リンク：
-* [Home Assistant](https://www.home-assistant.io)
+[Home Assistant 公式サイト](https://www.home-assistant.io/)
