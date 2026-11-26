@@ -15,7 +15,7 @@ const useCases = defineCollection({
       url: z.string().url(),
     })).default([]),
     featured: z.boolean().default(false),
+    isTemplate: z.boolean().default(false),
   }),
 });
-
 export const collections = { useCases };
