@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: Yamawine408/hanumans
+  branch: main
+
+media_folder: public/images/uploads
+public_folder: /hanumans/images/uploads
+
+collections:
+  - name: use-cases
+    label: Use Cases
+    folder: content/use-cases
+    create: true
+    filter:
+      field: isTemplate
+      value: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - label: "Difficulty"
+        name: "difficulty"
+        widget: "select"
+        options: ["かんたん", "ふつう", "上級"]
+        required: false
+      - { label: "Requirements", name: "requirements", widget: "list", default: [] }
+      - label: "References"
+        name: "references"
+        widget: "list"
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Template", name: "isTemplate", widget: "hidden", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
