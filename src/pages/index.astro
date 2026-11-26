@@ -14,7 +14,6 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
   <section class="intro-links" aria-label="Home Assistant が初めての方へ">
     <div class="idea-hub-head">
       <h3>Home Assistant (HA) が初めての方へ</h3>
-      <p>HA を始めるにあたって</p>
     </div>
     <div class="idea-grid">
       <a class="idea-card" href={baseUrl + 'about/'}>
@@ -28,7 +27,6 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
   <section class="idea-hub" aria-label="アイデアを探す">
     <div class="idea-hub-head">
       <h3>アイデアを探す</h3>
-      <p>きっかけや目的から、Home Assistantでできることを見つけよう。</p>
     </div>
     <div class="idea-grid">
       <a class="idea-card" href={baseUrl + 'triggers/'}>
@@ -36,7 +34,7 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
         <p>人の検知、温度変化、帰宅、時刻、天気など。きっかけから探す。</p>
       </a>
       <a class="idea-card" href={baseUrl + 'actions/'}>
-        <h4>こういうことをしたい</h4>
+        <h4>こうしたい</h4>
         <p>照明を点ける、家電を動かす、通知する。目的から探す。</p>
       </a>
       <a class="idea-card idea-card-featured" href={baseUrl + 'cases/'}>
@@ -58,12 +56,12 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
         <h4>ネットワーク・通信・連携技術</h4>
         <p>Wi-Fi、Zigbee、MQTT、ZHAなど、機器をつなぐ技術を知る。</p>
       </a>
-      <a class="idea-card" href={baseUrl + 'integratios/'}>
-        <h4>役にたつインテグレーション</h4>
+      <a class="idea-card" href={baseUrl + 'integrations/'}>
+        <h4>インテグレーションの紹介</h4>
         <p>HAの機能を拡充するインテグレーションの紹介</p>
       </a>
       <a class="idea-card" href={baseUrl + 'apps/'}>
-        <h4>役にたつApp</h4>
+        <h4>Appの紹介</h4>
         <p>HAの機能を拡充するAppの紹介</p>
       </a>
       <a class="idea-card" href={baseUrl + 'tips/'}>
