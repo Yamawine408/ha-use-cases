@@ -64,3 +64,12 @@
 .ha-brand-mark{width:58px;height:58px;min-width:58px;max-width:58px;flex:0 0 58px;box-sizing:border-box}
 .ha-brand-mark svg{display:block;width:100%;height:100%;max-width:100%;max-height:100%}
 .ha-intro-glass>div:last-child{min-width:0;flex:1}
+
+/* Hard reset for HA hero layout to prevent inherited site styles from distorting it */
+.ha-landing, .ha-landing *{box-sizing:border-box}
+.ha-landing .ha-hero{display:block;width:100%;min-width:0}
+.ha-landing .ha-hero-copy{display:block;width:min(100%,680px);max-width:680px;min-width:0;margin:0}
+.ha-landing .ha-intro-glass{display:block;width:100%;max-width:560px;min-width:0;padding:1.25rem;border-radius:18px}
+.ha-landing .ha-intro-text{display:block;width:100%;min-width:0}
+.ha-landing .ha-intro-glass h2{margin:0 0 .5rem}
+.ha-landing .ha-intro-glass p{width:100%;max-width:100%;overflow-wrap:anywhere}
