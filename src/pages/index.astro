@@ -39,6 +39,9 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
         <h3>事例集</h3>
         <p>具体的な活用例を眺めながら、新しいアイデアを見つける。</p>
       </a>
+    </div>
+  </section>
+  <section class="idea-hub" aria-label="技術解説">
       <a class="idea-card" href={baseUrl + 'devices/'}>
         <h3>デバイス解説</h3>
         <p>センサーや機器の仕組み、特徴、選び方を知る。</p>
@@ -46,6 +49,22 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
       <a class="idea-card" href={baseUrl + 'network/'}>
         <h3>ネットワーク・通信・連携技術</h3>
         <p>Wi-Fi、Zigbee、MQTT、ZHAなど、機器をつなぐ技術を知る。</p>
+      </a>
+      <a class="idea-card" href={baseUrl + 'integratios/'}>
+        <h3>役にたつインテグレーション</h3>
+        <p>HAの機能を拡充するインテグレーションの紹介</p>
+      </a>
+      <a class="idea-card" href={baseUrl + 'apps/'}>
+        <h3>役にたつApp</h3>
+        <p>HAの機能を拡充するAppの紹介</p>
+      </a>
+      <a class="idea-card" href={baseUrl + 'tips/'}>
+        <h3>HA テクニック</h3>
+        <p>HAのちょっとしたテクニック</p>
+      </a>
+      <a class="idea-card" href={baseUrl + 'trouble-shooting/'}>
+        <h3>トラブルシューティング</h3>
+        <p>トラブル解決のヒント</p>
       </a>
     </div>
   </section>
