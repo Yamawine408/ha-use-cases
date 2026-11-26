@@ -7,7 +7,6 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
 ---
 <BaseLayout>
   <section class="hero">
-    <p class="eyebrow">HOME ASSISTANT USE CASES</p>
     <h1>Home Assistant の「沼」へようこそ！</h1>
     <p class="hero-copy">Home Assistant で「こんなことできる？」の答えを見つけましょう。
     Home Assistant の沼にハマった人々のアイデアを元に日々の暮らしをもっと便利にしよう！</p>
@@ -28,28 +27,22 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     </div>
     <div class="idea-grid">
       <a class="idea-card" href={baseUrl + 'triggers/'}>
-        <span class="idea-number">01</span>
         <h3>何かが起きたら</h3>
         <p>人の検知、温度変化、帰宅、時刻、天気など。きっかけから探す。</p>
       </a>
       <a class="idea-card" href={baseUrl + 'actions/'}>
-        <span class="idea-number">02</span>
         <h3>こういうことをしたい</h3>
         <p>照明を点ける、家電を動かす、通知する。目的から探す。</p>
       </a>
       <a class="idea-card idea-card-featured" href={baseUrl + 'cases/'}>
-        <span class="idea-number">03</span>
         <h3>事例集</h3>
         <p>具体的な活用例を眺めながら、新しいアイデアを見つける。</p>
-        <span class="idea-arrow">事例を見る →</span>
       </a>
       <a class="idea-card" href={baseUrl + 'devices/'}>
-        <span class="idea-number">04</span>
         <h3>デバイス解説</h3>
         <p>センサーや機器の仕組み、特徴、選び方を知る。</p>
       </a>
       <a class="idea-card" href={baseUrl + 'network/'}>
-        <span class="idea-number">05</span>
         <h3>ネットワーク・通信・連携技術</h3>
         <p>Wi-Fi、Zigbee、MQTT、ZHAなど、機器をつなぐ技術を知る。</p>
       </a>
