@@ -12,5 +12,6 @@ description: Home Assistantについて。自由にデバイスをつなぎ、�
 - 温度や湿度、電力などを見える化
 - 防犯や見守りを強化
 - 自分のアイデアで自由なオートメーションを作る
+- あなたの想像力で便利で安心な毎日を実現しよう
 
 [Home Assistant 公式サイト](https://www.home-assistant.io/)
