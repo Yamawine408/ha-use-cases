@@ -73,3 +73,7 @@
 .ha-landing .ha-intro-text{display:block;width:100%;min-width:0}
 .ha-landing .ha-intro-glass h2{margin:0 0 .5rem}
 .ha-landing .ha-intro-glass p{width:100%;max-width:100%;overflow-wrap:anywhere}
+
+/* HA logo asset: fixed, contained sizing */
+.ha-landing .ha-logo-img{display:block!important;width:64px!important;height:64px!important;max-width:64px!important;max-height:64px!important;object-fit:contain;margin:0 0 1rem!important;flex:none!important}
+.ha-landing .ha-intro-text{display:block!important;width:100%!important}
