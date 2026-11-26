@@ -2,11 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout title="Home Assistant | HAnumans">
+<BaseLayout title="Home Assistant | HAnumans">
   <h1>Home Assistant (HA)</h1>
 
   <p>
     HAnumans is a community for people who use Home Assistant
     and share their ideas, experiences, and discoveries.
   </p>
-</Layout>
+</BaseLayout>
