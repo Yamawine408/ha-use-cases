@@ -42,9 +42,13 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     </div>
   </section>
   <section class="idea-hub" aria-label="技術解説">
+    <div class="idea-hub-head">
+      <h2>技術の解説</h2>
+    </div>
+    <div class="idea-grid">
       <a class="idea-card" href={baseUrl + 'devices/'}>
-        <h3>デバイス解説</h3>
-        <p>センサーや機器の仕組み、特徴、選び方を知る。</p>
+        <h3>HAデバイス</h3>
+        <p>HAで使われるデバイス（センサー、赤外線、エアコン、カーテンなど）</p>
       </a>
       <a class="idea-card" href={baseUrl + 'network/'}>
         <h3>ネットワーク・通信・連携技術</h3>
