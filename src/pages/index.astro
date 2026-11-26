@@ -9,16 +9,15 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
   <section class="hero">
     <p class="eyebrow">HOME ASSISTANT USE CASES</p>
     <h1>Home Assistant の「沼」へようこそ！</h1>
-    <p class="hero-copy">Home Assistant で「こんなことできる？」から始めよう。暮らしの中のアイデアを見つける事例集です。</p>
+    <p class="hero-copy">Home Assistant で「こんなことできる？」の答えを見つけましょう。
+    Home Assistant の沼にハマった人々のアイデアを元に日々の暮らしをもっと便利にしよう！</p>
   </section>
   <section class="intro-links" aria-label="Home Assistant が初めての方へ">
     <a class="intro-card" href={baseUrl + 'about/'}>
-      <h2>Home Assistant (HA) を知る</h2>
+      <h3>Home Assistant (HA) を知る</h3>
     </a>
     <a class="intro-card" href={baseUrl + 'getting-started/'}>
-      <span class="intro-icon">⚙</span>
-      <span class="intro-label">START GUIDE</span>
-      <h2>Home Assistant (HA) を始める</h2>
+      <h3>Home Assistant (HA) を始める</h3>
     </a>
   </section>
   <section class="idea-hub" aria-label="アイデアを探す">
@@ -59,12 +58,5 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
         <span class="idea-arrow">知る →</span>
       </a>
     </div>
-  </section>
-  <section class="catalog catalog-link" id="cases">
-    <a class="catalog-link-card" href={baseUrl + 'cases/'}>
-      <div class="catalog-head"><h2>事例集・プレビュー</h2><span>{cases.length}件 →</span></div>
-      <p>実際の活用事例を一覧で見て、Home Assistantでできることを探してみよう。</p>
-      <span class="read-more">事例一覧を見る →</span>
-    </a>
   </section>
 </BaseLayout>
