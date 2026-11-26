@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home Assistant | HAnumans">
+  <h1>Home Assistant (HA)</h1>
+
+  <p>
+    HAnumans is a community for people who use Home Assistant
+    and share their ideas, experiences, and discoveries.
+  </p>
+</Layout>
