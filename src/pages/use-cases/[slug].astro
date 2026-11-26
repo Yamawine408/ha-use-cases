@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content';
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('useCases');
+  const entries = await getCollection('useCases', ({ data }) => !data.isTemplate);
   return entries.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -35,7 +35,6 @@ const { Content } = await render(entry);
     </section> : null}
   </article>
 </BaseLayout>
-
 <style>
   .case-content{line-height:1.85}
   .case-content h2{margin:2.2rem 0 .9rem;padding-bottom:.55rem;border-bottom:1px solid var(--border,rgba(128,128,128,.2))}
