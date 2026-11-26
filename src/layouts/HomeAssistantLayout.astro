@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title = 'Home Assistant', description = 'Home Assistantについて' } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article class="ha-landing">
+    <section class="ha-hero">
+      <div class="ha-hero-copy">
+        <p class="ha-eyebrow">HOME ASSISTANT</p>
+        <h1>Your home.<br />Your rules.</h1>
+        <p class="ha-hero-jp">家を自分の思い通りに。<br />デバイスも、メーカーも、クラウドも、縛られずに。</p>
+        <div class="ha-intro-glass">
+          <div class="ha-brand-mark" aria-hidden="true">⌂</div>
+          <div><h2>Home Assistant</h2><p>あらゆるスマートデバイスをつなぎ、あなた自身が作るホームオートメーションプラットフォーム。</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="ha-principles" aria-label="Home Assistantの特徴">
+      <div class="ha-principle ha-local"><span class="ha-symbol" aria-hidden="true">▤</span><h2>Local First</h2><p>クラウドに依存せず、<br />家の中で安全に動く。</p></div>
+      <div class="ha-principle ha-platform"><span class="ha-symbol" aria-hidden="true">⌘</span><h2>One Platform</h2><p>異なるメーカーのデバイスを<br />ひとつにまとめる。</p></div>
+      <div class="ha-principle ha-automation"><span class="ha-symbol" aria-hidden="true">ϟ</span><h2>Your Automation</h2><p>決められた使い方ではなく、<br />自分のアイデアで暮らしを変える。</p></div>
+    </section>
+    <section class="ha-content"><slot /></section>
+  </article>
+</BaseLayout>
