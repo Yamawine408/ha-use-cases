@@ -12,12 +12,14 @@ const categories = [...new Set(cases.map((c) => c.data.category))].sort();
     Home Assistant の沼にハマった人々のアイデアを元に日々の暮らしをもっと便利にしよう！</p>
   </section>
   <section class="intro-links" aria-label="Home Assistant が初めての方へ">
-    <a class="intro-card" href={baseUrl + 'about/'}>
-      <h3>Home Assistant (HA) を知る</h3>
-    </a>
-    <a class="intro-card" href={baseUrl + 'getting-started/'}>
-      <h3>Home Assistant (HA) を始める</h3>
-    </a>
+    <div class="idea-grid">
+        <a class="intro-card" href={baseUrl + 'about/'}>
+    	  <h3>Home Assistant (HA) を知る</h3>
+        </a>  	   
+        <a class="intro-card" href={baseUrl + 'getting-started/'}>
+          <h3>Home Assistant (HA) を始める</h3>
+        </a>
+    </div>
   </section>
   <section class="idea-hub" aria-label="アイデアを探す">
     <div class="idea-hub-head">
